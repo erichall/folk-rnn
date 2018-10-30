@@ -1,0 +1,5 @@
+X:0
+L:1/8
+M:2/4
+K:GMix
+|:GFEG|FDFA|G2Bc|BAGF|EFEG|FDFA|BcBA|G2G2:||:gedf/2e/2|ecdB|cBAB|dec2|gece/2f/2|gfef|ga/2g/2fe|d2d2:|

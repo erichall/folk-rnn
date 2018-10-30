@@ -1,0 +1,69 @@
+vocabulary size: 219
+n tunes: 89927
+n train tunes: 85447.0
+n validation tunes: 4480.0
+min, max length 2 1998
+Building the model
+  number of parameters: 5860916
+  layer output shapes:               #params:   output shape:
+    InputLayer                       0          (64, None)
+    EmbeddingLayer                   47961      (64, None, 219)
+    InputLayer                       0          (64, None)
+    LSTMLayer                        1500160    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    ReshapeLayer                     0          (None, 512)
+    DenseLayer                       112347     (None, 219)
+Train model
+1/133510 (epoch 0.001) train_loss=1448.34350586 time/batch=1.03s
+2/133510 (epoch 0.001) train_loss=1206.04638672 time/batch=0.95s
+3/133510 (epoch 0.002) train_loss=2501.95947266 time/batch=2.38s
+4/133510 (epoch 0.003) train_loss=1337.09484863 time/batch=1.38s
+5/133510 (epoch 0.004) train_loss=263.97311401 time/batch=0.39s
+6/133510 (epoch 0.004) train_loss=5381.84130859 time/batch=6.79s
+7/133510 (epoch 0.005) train_loss=579.21331787 time/batch=1.50s
+8/133510 (epoch 0.006) train_loss=1545.35498047 time/batch=1.61s
+9/133510 (epoch 0.007) train_loss=1452.88513184 time/batch=1.67s
+10/133510 (epoch 0.007) train_loss=903.46380615 time/batch=1.16s
+11/133510 (epoch 0.008) train_loss=893.34265137 time/batch=1.10s
+12/133510 (epoch 0.009) train_loss=626.52325439 time/batch=0.80s
+13/133510 (epoch 0.010) train_loss=872.81774902 time/batch=1.00s
+14/133510 (epoch 0.010) train_loss=316.43786621 time/batch=0.47s
+15/133510 (epoch 0.011) train_loss=230.42889404 time/batch=0.29s
+16/133510 (epoch 0.012) train_loss=1314.68127441 time/batch=1.40s
+17/133510 (epoch 0.013) train_loss=1537.83984375 time/batch=1.88s
+18/133510 (epoch 0.013) train_loss=1623.37866211 time/batch=1.94s
+19/133510 (epoch 0.014) train_loss=378.49267578 time/batch=0.64s
+20/133510 (epoch 0.015) train_loss=356.33157349 time/batch=0.44s
+21/133510 (epoch 0.016) train_loss=2643.26879883 time/batch=2.87s
+22/133510 (epoch 0.016) train_loss=2547.18408203 time/batch=3.29s
+23/133510 (epoch 0.017) train_loss=452.47003174 time/batch=0.92s
+24/133510 (epoch 0.018) train_loss=1529.32250977 time/batch=1.63s
+25/133510 (epoch 0.019) train_loss=1206.59057617 time/batch=1.50s
+26/133510 (epoch 0.019) train_loss=455.79742432 time/batch=0.68s
+27/133510 (epoch 0.020) train_loss=1326.39428711 time/batch=1.56s
+28/133510 (epoch 0.021) train_loss=1893.90820312 time/batch=2.13s
+29/133510 (epoch 0.022) train_loss=1794.48071289 time/batch=2.21s
+30/133510 (epoch 0.022) train_loss=416.04199219 time/batch=0.75s
+31/133510 (epoch 0.023) train_loss=561.57482910 time/batch=0.67s
+32/133510 (epoch 0.024) train_loss=1297.56384277 time/batch=1.47s
+33/133510 (epoch 0.025) train_loss=1055.75537109 time/batch=1.33s
+34/133510 (epoch 0.025) train_loss=1074.61865234 time/batch=1.30s
+35/133510 (epoch 0.026) train_loss=498.21585083 time/batch=0.70s
+36/133510 (epoch 0.027) train_loss=659.04357910 time/batch=0.80s
+37/133510 (epoch 0.028) train_loss=443.37344360 time/batch=0.60s
+38/133510 (epoch 0.028) train_loss=905.21679688 time/batch=1.08s
+39/133510 (epoch 0.029) train_loss=1264.72668457 time/batch=1.55s
+40/133510 (epoch 0.030) train_loss=231.16877747 time/batch=0.47s
+41/133510 (epoch 0.031) train_loss=328.92935181 time/batch=0.42s
+42/133510 (epoch 0.031) train_loss=1988.91174316 time/batch=2.31s
+43/133510 (epoch 0.032) train_loss=2870.11303711 time/batch=3.47s
+44/133510 (epoch 0.033) train_loss=820.80584717 time/batch=1.35s
+45/133510 (epoch 0.034) train_loss=1040.55529785 time/batch=1.28s
+46/133510 (epoch 0.034) train_loss=568.31420898 time/batch=0.79s
+47/133510 (epoch 0.035) train_loss=677.16613770 time/batch=0.83s
+48/133510 (epoch 0.036) train_loss=2620.63134766 time/batch=3.48s
+49/133510 (epoch 0.037) train_loss=1118.

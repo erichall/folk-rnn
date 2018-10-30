@@ -1,0 +1,5 @@
+X:0
+L:1/8
+M:4/4
+K:DMaj
+|:GE|FAdBA3E|FAdfecAf|g3fedBA|BgecA2AG|FAdAFADE|FAdfecA2|d3BA2af|eBBAf2:||:ef|(3dddfdadfd|eBB2B2AB|d2dfafdf|edefedBA|dAFAd3f|edBAe2BA|dcdefdab|afedd2:|

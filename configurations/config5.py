@@ -8,10 +8,14 @@ learning_rate = 0.003
 learning_rate_decay_after = 20
 learning_rate_decay = 0.97
 
-batch_size = 64
-max_epoch = 100
+batch_size = 32
+max_epoch = 50
 grad_clipping = 5
 validation_fraction = 0.05
 validate_every = 1000  # iterations
 
-save_every = 10  # epochs
+save_every = 5  # epochs
+
+#resume_path="metadata/config5-24_oct_folkwiki_and_sessions_50_length_cap-20181024-210059.pkl"
+resume_path="config5-24_oct_folkwiki_and_sessions_50_length_cap-20181024-210059_100_EPOCHS.pkl"
+

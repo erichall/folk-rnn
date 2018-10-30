@@ -1,0 +1,67 @@
+vocabulary size: 219
+n tunes: 89927
+n train tunes: 85447.0
+n validation tunes: 4480.0
+min, max length 2 1998
+Building the model
+  number of parameters: 5860916
+  layer output shapes:               #params:   output shape:
+    InputLayer                       0          (64, None)
+    EmbeddingLayer                   47961      (64, None, 219)
+    InputLayer                       0          (64, None)
+    LSTMLayer                        1500160    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    ReshapeLayer                     0          (None, 512)
+    DenseLayer                       112347     (None, 219)
+Traceback (most recent call last):
+  File "train_rnn.py", line 160, in <module>
+    train = theano.function([x, mask], loss, updates=updates)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function.py", line 317, in function
+    output_keys=output_keys)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/pfunc.py", line 486, in pfunc
+    output_keys=output_keys)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function_module.py", line 1839, in orig_function
+    name=name)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function_module.py", line 1519, in __init__
+    optimizer_profile = optimizer(fgraph)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 108, in __call__
+    return self.optimize(fgraph)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 97, in optimize
+    ret = self.apply(fgraph, *args, **kwargs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 251, in apply
+    sub_prof = optimizer.optimize(fgraph)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 97, in optimize
+    ret = self.apply(fgraph, *args, **kwargs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 2460, in apply
+    sub_prof = gopt.apply(fgraph)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 251, in apply
+    sub_prof = optimizer.optimize(fgraph)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 97, in optimize
+    ret = self.apply(fgraph, *args, **kwargs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_opt.py", line 685, in apply
+    node = self.process_node(fgraph, node)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_opt.py", line 694, in process_node
+    op.inputs, op.outputs, op.info)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_utils.py", line 1139, in __init__
+    rval = reconstruct_graph(_inner_inputs, _inner_outputs, '')
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_utils.py", line 1126, in reconstruct_graph
+    nw_outputs = clone(outputs, replace=givens)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_utils.py", line 247, in clone
+    share_inputs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/pfunc.py", line 219, in rebuild_collect_shared
+    cloned_v = clone_v_get_shared_updates(v, copy_inputs_over)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/pfunc.py", line 96, in clone_v_get_shared_updates
+    [clone_d[i] for i in owner.inputs], strict=rebuild_strict)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/graph.py", line 249, in clone_with_new_inputs
+    new_node = self.clone()
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/graph.py", line 207, in clone
+    [output.clone() for output in self.outputs])
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/graph.py", line 454, in clone
+    cp.tag = copy(self.tag)
+  File "/home/hallstrom.eric/miniconda2/lib/python2.7/copy.py", line 88, in copy
+    rv = reductor(2)
+KeyboardInterrupt

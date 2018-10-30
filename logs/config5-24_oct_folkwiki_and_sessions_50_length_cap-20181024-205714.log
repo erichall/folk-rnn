@@ -1,0 +1,27 @@
+vocabulary size: 223
+n tunes: 26273
+n train tunes: 24929.0
+n validation tunes: 1344.0
+min, max length 2 2000
+Building the model
+  number of parameters: 5872928
+  layer output shapes:               #params:   output shape:
+    InputLayer                       0          (64, None)
+    EmbeddingLayer                   49729      (64, None, 223)
+    InputLayer                       0          (64, None)
+    LSTMLayer                        1508352    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    ReshapeLayer                     0          (None, 512)
+    DenseLayer                       114399     (None, 223)
+Train model
+Load metadata for resuming
+Traceback (most recent call last):
+  File "train_rnn.py", line 193, in <module>
+    nn.layers.set_all_param_values(l_out, resume_metadata['param_values'])
+  File "/home/hallstrom.eric/miniconda2/lib/python2.7/site-packages/lasagne/layers/helper.py", line 522, in set_all_param_values
+    (p.get_value().shape, v.shape))
+ValueError: mismatch: parameter has shape (223, 223) but value to set has shape (212, 212)

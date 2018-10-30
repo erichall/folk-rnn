@@ -1,0 +1,5 @@
+X:0
+L:1/8
+M:6/8
+K:GMaj
+|:ddc|B2BBAB|G2ABcd|e2dcBA|^G3G2A|d2dcBc|B3BAB|d2dcBA|G3GBd|g2gdcB|c2cBcd|e2cABA|G3G2B|G2GBAB|c3cde|afde2d|A3d2|DEFGAB|c2cBcd|g2fdfa|g3:|

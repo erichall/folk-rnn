@@ -1,0 +1,60 @@
+vocabulary size: 233
+n tunes: 52478
+n train tunes: 49854.0
+n validation tunes: 2624.0
+min, max length 2 1998
+Building the model
+Traceback (most recent call last):
+  File "train_rnn.py", line 127, in <module>
+    predictions = nn.layers.get_output(l_out)
+  File "/home/hallstrom.eric/miniconda2/lib/python2.7/site-packages/lasagne/layers/helper.py", line 197, in get_output
+    all_outputs[layer] = layer.get_output_for(layer_inputs, **kwargs)
+  File "/home/hallstrom.eric/miniconda2/lib/python2.7/site-packages/lasagne/layers/noise.py", line 102, in get_output_for
+    dtype=input.dtype)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/sandbox/rng_mrg.py", line 901, in binomial
+    x = self.uniform(size=size, nstreams=nstreams, **kwargs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/sandbox/rng_mrg.py", line 872, in uniform
+    rstates = self.get_substream_rstates(nstreams, dtype)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/configparser.py", line 117, in res
+    return f(*args, **kwargs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/sandbox/rng_mrg.py", line 779, in get_substream_rstates
+    multMatVect(rval[0], A1p72, M1, A2p72, M2)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/sandbox/rng_mrg.py", line 62, in multMatVect
+    [A_sym, s_sym, m_sym, A2_sym, s2_sym, m2_sym], o, profile=False)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function.py", line 317, in function
+    output_keys=output_keys)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/pfunc.py", line 486, in pfunc
+    output_keys=output_keys)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function_module.py", line 1841, in orig_function
+    fn = m.create(defaults)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function_module.py", line 1715, in create
+    input_storage=input_storage_lists, storage_map=storage_map)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/link.py", line 699, in make_thunk
+    storage_map=storage_map)[:3]
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/vm.py", line 1091, in make_all
+    impl=impl))
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/op.py", line 955, in make_thunk
+    no_recycling)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/op.py", line 858, in make_c_thunk
+    output_storage=node_output_storage)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/cc.py", line 1217, in make_thunk
+    keep_lock=keep_lock)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/cc.py", line 1157, in __compile__
+    keep_lock=keep_lock)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/cc.py", line 1620, in cthunk_factory
+    key=key, lnk=self, keep_lock=keep_lock)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/cmodule.py", line 1181, in module_from_key
+    module = lnk.compile_cmodule(location)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/cc.py", line 1523, in compile_cmodule
+    preargs=preargs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/cmodule.py", line 2343, in compile_str
+    p_out = output_subprocess_Popen(cmd)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/misc/windows.py", line 80, in output_subprocess_Popen
+    out = p.communicate()
+  File "/home/hallstrom.eric/miniconda2/lib/python2.7/subprocess.py", line 483, in communicate
+    return self._communicate(input)
+  File "/home/hallstrom.eric/miniconda2/lib/python2.7/subprocess.py", line 1124, in _communicate
+    stdout, stderr = self._communicate_with_poll(input)
+  File "/home/hallstrom.eric/miniconda2/lib/python2.7/subprocess.py", line 1178, in _communicate_with_poll
+    ready = poller.poll()
+KeyboardInterrupt

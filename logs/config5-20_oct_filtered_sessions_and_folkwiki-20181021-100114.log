@@ -1,0 +1,67 @@
+vocabulary size: 233
+n tunes: 52478
+n train tunes: 49854.0
+n validation tunes: 2624.0
+min, max length 2 1998
+Building the model
+  number of parameters: 5903098
+  layer output shapes:               #params:   output shape:
+    InputLayer                       0          (64, None)
+    EmbeddingLayer                   54289      (64, None, 233)
+    InputLayer                       0          (64, None)
+    LSTMLayer                        1528832    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    ReshapeLayer                     0          (None, 512)
+    DenseLayer                       119529     (None, 233)
+Traceback (most recent call last):
+  File "train_rnn.py", line 160, in <module>
+    train = theano.function([x, mask], loss, updates=updates)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function.py", line 317, in function
+    output_keys=output_keys)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/pfunc.py", line 486, in pfunc
+    output_keys=output_keys)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function_module.py", line 1839, in orig_function
+    name=name)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function_module.py", line 1519, in __init__
+    optimizer_profile = optimizer(fgraph)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 108, in __call__
+    return self.optimize(fgraph)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 97, in optimize
+    ret = self.apply(fgraph, *args, **kwargs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 251, in apply
+    sub_prof = optimizer.optimize(fgraph)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 97, in optimize
+    ret = self.apply(fgraph, *args, **kwargs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 2513, in apply
+    lopt_change = self.process_node(fgraph, node, lopt)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/opt.py", line 2034, in process_node
+    replacements = lopt.transform(node)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/tensor/opt.py", line 4999, in transform
+    new = self.merge_num_denum(num, denum)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/tensor/opt.py", line 4794, in merge_num_denum
+    return self.main(*num)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/op.py", line 615, in __call__
+    node = self.make_node(*inputs, **kwargs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/tensor/elemwise.py", line 482, in make_node
+    DimShuffle, *inputs)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/tensor/elemwise.py", line 438, in get_output_info
+    ['x'] * difference + list(range(length)))(input))
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/tensor/elemwise.py", line 157, in __init__
+    COp.__init__(self, [self.c_func_file], self.c_func_name)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/op.py", line 1308, in __init__
+    self.load_c_code(func_files)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/op.py", line 1327, in load_c_code
+    func_files = [self.get_path(f) for f in func_files]
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/op.py", line 1292, in get_path
+    f = os.path.realpath(os.path.join(class_dir, f))
+  File "/home/hallstrom.eric/miniconda2/lib/python2.7/posixpath.py", line 375, in realpath
+    path, ok = _joinrealpath('', filename, {})
+  File "/home/hallstrom.eric/miniconda2/lib/python2.7/posixpath.py", line 400, in _joinrealpath
+    if not islink(newpath):
+  File "/home/hallstrom.eric/miniconda2/lib/python2.7/posixpath.py", line 135, in islink
+    st = os.lstat(path)
+KeyboardInterrupt

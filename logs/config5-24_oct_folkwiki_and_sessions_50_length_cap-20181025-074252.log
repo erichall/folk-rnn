@@ -1,0 +1,43 @@
+vocabulary size: 223
+n tunes: 26273
+n train tunes: 24929.0
+n validation tunes: 1344.0
+min, max length 2 2000
+Building the model
+  number of parameters: 5872928
+  layer output shapes:               #params:   output shape:
+    InputLayer                       0          (64, None)
+    EmbeddingLayer                   49729      (64, None, 223)
+    InputLayer                       0          (64, None)
+    LSTMLayer                        1508352    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    ReshapeLayer                     0          (None, 512)
+    DenseLayer                       114399     (None, 223)
+Train model
+Load metadata for resuming
+setting learning rate to 0.0002705
+38901/77903 (epoch 99.870) train_loss=182.23764038 time/batch=0.86s
+38902/77903 (epoch 99.873) train_loss=612.80963135 time/batch=1.74s
+38903/77903 (epoch 99.875) train_loss=248.28846741 time/batch=0.95s
+38904/77903 (epoch 99.878) train_loss=484.91809082 time/batch=1.47s
+38905/77903 (epoch 99.880) train_loss=228.70281982 time/batch=0.85s
+38906/77903 (epoch 99.883) train_loss=204.63154602 time/batch=0.72s
+38907/77903 (epoch 99.886) train_loss=681.48034668 time/batch=2.12s
+38908/77903 (epoch 99.888) train_loss=631.14611816 time/batch=2.38s
+Traceback (most recent call last):
+  File "train_rnn.py", line 202, in <module>
+    train_loss = train(x_batch, mask_batch)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function_module.py", line 903, in __call__
+    self.fn() if output_subset is None else\
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_op.py", line 963, in rval
+    r = p(n, [x[0] for x in i], o)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_op.py", line 952, in p
+    self, node)
+  File "scan_perform.pyx", line 592, in theano.scan_module.scan_perform.perform
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gpuarray/type.py", line 373, in value_zeros
+    def value_zeros(self, shape):
+KeyboardInterrupt

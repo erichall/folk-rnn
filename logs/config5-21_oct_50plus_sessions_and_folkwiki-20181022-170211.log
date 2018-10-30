@@ -1,0 +1,52 @@
+vocabulary size: 212
+n tunes: 89927
+n train tunes: 85447.0
+n validation tunes: 4480.0
+min, max length 2 1998
+Building the model
+  number of parameters: 5839972
+  layer output shapes:               #params:   output shape:
+    InputLayer                       0          (64, None)
+    EmbeddingLayer                   44944      (64, None, 212)
+    InputLayer                       0          (64, None)
+    LSTMLayer                        1485824    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    ReshapeLayer                     0          (None, 512)
+    DenseLayer                       108756     (None, 212)
+Train model
+Load metadata for resuming
+setting learning rate to 0.0004973
+106801/133510 (epoch 79.994) train_loss=301.97564697 time/batch=1.33s
+106802/133510 (epoch 79.995) train_loss=278.82440186 time/batch=0.97s
+106803/133510 (epoch 79.996) train_loss=872.40325928 time/batch=2.42s
+106804/133510 (epoch 79.996) train_loss=344.42825317 time/batch=1.44s
+106805/133510 (epoch 79.997) train_loss=93.03367615 time/batch=0.40s
+106806/133510 (epoch 79.998) train_loss=2036.03210449 time/batch=6.87s
+106807/133510 (epoch 79.999) train_loss=137.78262329 time/batch=1.64s
+106808/133510 (epoch 79.999) train_loss=560.99682617 time/batch=1.63s
+106809/133510 (epoch 80.000) train_loss=520.65740967 time/batch=1.69s
+106810/133510 (epoch 80.001) train_loss=300.69580078 time/batch=1.20s
+106811/133510 (epoch 80.002) train_loss=310.23333740 time/batch=1.10s
+106812/133510 (epoch 80.002) train_loss=172.90142822 time/batch=0.81s
+106813/133510 (epoch 80.003) train_loss=314.33984375 time/batch=1.02s
+106814/133510 (epoch 80.004) train_loss=100.57331848 time/batch=0.48s
+106815/133510 (epoch 80.005) train_loss=89.52644348 time/batch=0.29s
+106816/133510 (epoch 80.005) train_loss=459.03079224 time/batch=1.42s
+106817/133510 (epoch 80.006) train_loss=572.66491699 time/batch=1.90s
+Traceback (most recent call last):
+  File "train_rnn.py", line 202, in <module>
+    train_loss = train(x_batch, mask_batch)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function_module.py", line 903, in __call__
+    self.fn() if output_subset is None else\
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_op.py", line 963, in rval
+    r = p(n, [x[0] for x in i], o)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_op.py", line 952, in p
+    self, node)
+  File "scan_perform.pyx", line 586, in theano.scan_module.scan_perform.perform
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gpuarray/type.py", line 373, in value_zeros
+    def value_zeros(self, shape):
+KeyboardInterrupt

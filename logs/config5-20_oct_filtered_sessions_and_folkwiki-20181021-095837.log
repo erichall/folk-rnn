@@ -1,0 +1,18 @@
+vocabulary size: 233
+n tunes: 52478
+n train tunes: 49854.0
+n validation tunes: 2624.0
+min, max length 2 1998
+Building the model
+Traceback (most recent call last):
+  File "train_rnn.py", line 80, in <module>
+    mask = T.matrix('mask')
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/tensor/basic.py", line 756, in matrix
+    return type(name)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/type.py", line 420, in __call__
+    return utils.add_tag_trace(self.make_variable(name))
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/tensor/type.py", line 352, in make_variable
+    return self.Variable(self, name=name)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/tensor/var.py", line 852, in __init__
+    raise Exception(msg)
+Exception: You are creating a TensorVariable with float64 dtype. You requested an action via the Theano flag warn_float64={ignore,warn,raise,pdb}.

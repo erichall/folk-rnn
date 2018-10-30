@@ -1,0 +1,35 @@
+vocabulary size: 233
+n tunes: 52478
+n train tunes: 49854.0
+n validation tunes: 2624.0
+min, max length 2 1998
+Building the model
+  number of parameters: 5903098
+  layer output shapes:               #params:   output shape:
+    InputLayer                       0          (64, None)
+    EmbeddingLayer                   54289      (64, None, 233)
+    InputLayer                       0          (64, None)
+    LSTMLayer                        1528832    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    LSTMLayer                        2100224    (64, None, 512)
+    DropoutLayer                     0          (64, None, 512)
+    ReshapeLayer                     0          (None, 512)
+    DenseLayer                       119529     (None, 233)
+Train model
+/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/tensor/subtensor.py:2197: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  rval = inputs[0].__getitem__(inputs[1:])
+Traceback (most recent call last):
+  File "train_rnn.py", line 202, in <module>
+    train_loss = train(x_batch, mask_batch)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/compile/function_module.py", line 903, in __call__
+    self.fn() if output_subset is None else\
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_op.py", line 963, in rval
+    r = p(n, [x[0] for x in i], o)
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/scan_module/scan_op.py", line 952, in p
+    self, node)
+  File "scan_perform.pyx", line 397, in theano.scan_module.scan_perform.perform
+  File "/home/hallstrom.eric/.local/lib/python2.7/site-packages/theano/gof/op.py", line 891, in rval
+    def rval(p=p, i=node_input_storage, o=node_output_storage, n=node):
+KeyboardInterrupt
